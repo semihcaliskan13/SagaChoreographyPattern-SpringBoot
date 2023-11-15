@@ -1,0 +1,9 @@
+spring:
+  rabbitmq:
+    queue-names:
+      stock-orderCreated: stock-order-created-queue
+      payment-stockReserved: payment-stock-reserved-queue
+      order-paymentCompleted: order-payment-completed-queue
+      order-paymentFailed : order-payment-failed-queue
+      stock-PaymentFailed : stock-payment-failed-queue
+      order-stockNotReserved: order-stock-not-reserved-queue
