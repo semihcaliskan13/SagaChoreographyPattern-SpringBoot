@@ -5,5 +5,16 @@ spring:
       payment-stockReserved: payment-stock-reserved-queue
       order-paymentCompleted: order-payment-completed-queue
       order-paymentFailed : order-payment-failed-queue
-      stock-PaymentFailed : stock-payment-failed-queue
+      stock-paymentFailed : stock-payment-failed-queue
       order-stockNotReserved: order-stock-not-reserved-queue
+
+    exchange-names:
+      saga-event-exchange: saga-event-exchange
+
+    routing-keys:
+      stock-orderCreated: stock-order-created
+      payment-stockReserved: payment-stock-reserved
+      order-paymentCompleted: order-payment-completed
+      order-paymentFailed: order-payment-failed
+      stock-PaymentFailed: stock-payment-failed
+      order-stockNotReserved: order-stock-not-reserved

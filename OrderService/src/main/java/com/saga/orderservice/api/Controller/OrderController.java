@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/orders")
-@PropertySource("classpath:application.yml")
 public class OrderController {
 
     private final OrderRepository orderRepository;
@@ -41,6 +40,7 @@ public class OrderController {
         orderRepository.save(order);
         return totalPrice;
     }
+
 
 
 }
