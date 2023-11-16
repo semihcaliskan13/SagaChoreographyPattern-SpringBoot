@@ -1,5 +1,6 @@
 package com.saga.orderservice.entity;
 
+import com.saga.orderservice.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Order {
     private Long userId;
     private String address;
     private BigDecimal totalPrice;
+    private String orderStatus = OrderStatus.Suspend.getValue();
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id")

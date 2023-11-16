@@ -4,6 +4,8 @@ import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +18,7 @@ public class RabbitMqConfig {
     private String orderPaymentFailedQueue;
     @Value("${spring.rabbitmq.queue-names.order-paymentCompleted}")
     private String orderPaymentCompletedQueue;
-    @Value("${spring.rabbitmq.queue-names.order.stockNotReserved}")
+    @Value("${spring.rabbitmq.queue-names.order-stockNotReserved}")
     private String orderStockNotReservedQueue;
 
 
@@ -27,7 +29,7 @@ public class RabbitMqConfig {
     private String orderPaymentFailedKey;
     @Value("${spring.rabbitmq.routing-keys.order-paymentCompleted}")
     private String orderPaymentCompletedKey;
-    @Value("${spring.rabbitmq.routing-keys.order.stockNotReserved}")
+    @Value("${spring.rabbitmq.routing-keys.order-stockNotReserved}")
     private String orderStockNotReservedKey;
 
 
@@ -62,5 +64,9 @@ public class RabbitMqConfig {
     @Bean
     public Binding orderStockNotReservedQueueBinding() {
         return BindingBuilder.bind(orderStockNotReservedQueue()).to(directExchange()).with(orderStockNotReservedKey);
+    }
+    @Bean
+    public MessageConverter jsonMessageConverter() {
+        return new Jackson2JsonMessageConverter();
     }
 }
