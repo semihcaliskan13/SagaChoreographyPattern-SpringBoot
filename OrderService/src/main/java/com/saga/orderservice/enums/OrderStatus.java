@@ -6,7 +6,7 @@ import lombok.Getter;
 public enum OrderStatus {
     Suspend("Suspend"),
     Completed("Completed"),
-    Fail("Fail");
+    Failed("Failed");
 
     private String value;
 

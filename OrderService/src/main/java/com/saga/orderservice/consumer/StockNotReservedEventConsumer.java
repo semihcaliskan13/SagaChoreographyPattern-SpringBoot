@@ -21,7 +21,7 @@ public class StockNotReservedEventConsumer {
     @RabbitListener(queues = "${spring.rabbitmq.queue-names.order-stockNotReserved}")
     public void handleMessage(StockNotReservedEvent event) {
         Order order = repository.findById(event.getOrderId()).orElseThrow();
-        order.setOrderStatus(OrderStatus.Fail.getValue());
+        order.setOrderStatus(OrderStatus.Failed.getValue());
         repository.save(order);
     }
 }

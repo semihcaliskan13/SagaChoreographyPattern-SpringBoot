@@ -11,6 +11,6 @@ import java.util.List;
 @Builder
 public class PaymentFailedEvent {
     private Long orderId;
-    private String message;
+    private String message = "Your payment is failed!";
     private List<OrderItemMessage> orderItems;
 }

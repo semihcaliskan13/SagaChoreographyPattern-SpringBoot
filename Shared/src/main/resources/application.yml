@@ -16,5 +16,5 @@ spring:
       payment-stockReserved: payment-stock-reserved
       order-paymentCompleted: order-payment-completed
       order-paymentFailed: order-payment-failed
-      stock-PaymentFailed: stock-payment-failed
+      stock-paymentFailed: stock-payment-failed
       order-stockNotReserved: order-stock-not-reserved
