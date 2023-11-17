@@ -16,5 +16,5 @@ public class Stock {
     @Id
     private String id;
     private Long productId;
-    public Long count;
+    private Long count;
 }

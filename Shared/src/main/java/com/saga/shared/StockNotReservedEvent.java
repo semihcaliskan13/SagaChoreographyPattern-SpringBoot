@@ -2,6 +2,8 @@ package com.saga.shared;
 
 import lombok.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -10,5 +12,5 @@ import lombok.*;
 public class StockNotReservedEvent {
     private Long orderId;
     private Long userId;
-    private String message;
+    private List<String> errorMessages;
 }
